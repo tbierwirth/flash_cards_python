@@ -11,6 +11,3 @@ class CardClass(unittest.TestCase):
         self.assertEqual(card.question, "What is the capital of Alaska?")
         self.assertEqual(card.answer, "Juneau")
         self.assertEqual(card.category, "Geography")
-
-if __name__ == '__main__':
-    unittest.main()
