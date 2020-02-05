@@ -4,3 +4,10 @@ class Deck(object):
 
     def count(self):
         return len(self.cards)
+
+    def cards_in_category(self, category):
+        match = []
+        for card in self.cards:
+            if card.category == category:
+                match.append(card)
+        return match
