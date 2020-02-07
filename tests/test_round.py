@@ -60,3 +60,14 @@ class RoundClass(unittest.TestCase):
         round.take_turn("Topeka")
         self.assertEqual(round.number_correct_by_category("Geography"), 1)
         self.assertEqual(round.number_correct_by_category("STEM"), 0)
+
+    def test_percent_correct(self):
+        card_1 = Card("What is the capital of Alaska?", "Juneau", "Geography")
+        card_2 = Card("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", "STEM")
+        card_3 = Card("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", "STEM")
+        cards = [card_1, card_2, card_3]
+        deck = Deck(cards)
+        round = Round(deck)
+        round.take_turn("Juneau")
+        round.take_turn("Topeka")
+        self.assertEqual(round.percent_correct(), 50.0)
