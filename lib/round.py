@@ -10,4 +10,8 @@ class Round(object):
         return self.deck.cards[len(self.turns)]
 
     def take_turn(self, guess):
-        return Turn(guess, self.current_card())
+        turn = Turn(guess, self.current_card())
+        self.turns.append(turn)
+        if turn.is_correct():
+            self.number_correct += 1
+        return turn
