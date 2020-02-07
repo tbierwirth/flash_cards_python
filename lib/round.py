@@ -15,3 +15,10 @@ class Round(object):
         if turn.is_correct():
             self.number_correct += 1
         return turn
+
+    def number_correct_by_category(self, category):
+        correct = 0
+        for turn in self.turns:
+            if (turn.is_correct() == True) and (turn.card.category == category):
+                correct +=1
+        return correct
