@@ -22,3 +22,6 @@ class Round(object):
             if (turn.is_correct() == True) and (turn.card.category == category):
                 correct +=1
         return correct
+
+    def percent_correct(self):
+        return (self.number_correct / len(self.turns)) * 100.0
