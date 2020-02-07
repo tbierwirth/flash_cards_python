@@ -1,3 +1,5 @@
+from lib.turn import Turn
+
 class Round(object):
     def __init__(self, deck):
         self.deck = deck
@@ -6,3 +8,6 @@ class Round(object):
 
     def current_card(self):
         return self.deck.cards[len(self.turns)]
+
+    def take_turn(self, guess):
+        return Turn(guess, self.current_card())
