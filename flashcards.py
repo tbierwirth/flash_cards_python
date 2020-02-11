@@ -11,12 +11,17 @@ cards = [card_1, card_2, card_3]
 deck = Deck(cards)
 round = Round(deck)
 
-print(f"Welcome! You're playing with {len(cards)} cards.")
+print(f"Welcome! You're playing with {deck.count} cards.")
 print("-------------------------------------")
 
+i = 1
 for card in cards:
-    print(f"This is card number {i} out of {len(cards)}")
+    print(f"This is card number {i} out of {deck.count()}")
     print(f"Question: {card.question}")
     guess = input("")
     turn = round.take_turn(guess)
     print(turn.feedback())
+    i += 1
+
+print("****** Game over! ******")
+print(f"You had {round.number_correct} out of {deck.count()} for a total score of {round.percent_correct()}%.")
