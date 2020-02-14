@@ -2,11 +2,10 @@ from lib.card import Card
 from lib.deck import Deck
 from lib.round import Round
 from lib.turn import Turn
+from lib.card_generator import CardGenerator
 
-card_1 = Card("What is the capital of Alaska?", "Juneau", "Geography")
-card_2 = Card("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", "STEM")
-card_3 = Card("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", "STEM")
-cards = [card_1, card_2, card_3]
+generator = CardGenerator("cards.txt")
+cards = generator.cards
 categories = []
 
 deck = Deck(cards)
